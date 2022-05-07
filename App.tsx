@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View, Platform } from 'react-native';
 
+import SearchInput from 'src/components/SearchInput';
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -12,6 +14,7 @@ export default function App() {
       <Text style={[styles.text, styles.textLarge]}>
         24C
       </Text>
+      <SearchInput placeholder="Search any city" />
     </View>
   );
 }

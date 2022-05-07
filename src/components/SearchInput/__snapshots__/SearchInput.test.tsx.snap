@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput renders successfully 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "backgroundColor": "#666",
+      "borderRadius": 5,
+      "color": "white",
+      "height": 40,
+      "marginHorizontal": 40,
+      "marginTop": 20,
+      "paddingHorizontal": 10,
+      "width": 300,
+    }
+  }
+>
+  <TextInput
+    autoCorrect={false}
+    clearButtonMode="always"
+    placeholder="Type here"
+    placeholderTextColor="white"
+    style={
+      Object {
+        "color": "white",
+        "flex": 1,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
