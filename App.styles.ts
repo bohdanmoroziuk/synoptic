@@ -1,27 +1,9 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#34495E',
-  },
-  text: {
-    color: 'white',
-    textAlign: 'center',
-    ...Platform.select({
-      ios: {
-        fontFamily: 'AvenirNext-Regular',
-      },
-      android: {
-        fontFamily: 'Roboto',
-      },
-    }),
-  },
-  textSmall: {
-    fontSize: 18,
-  },
-  textLarge: {
-    fontSize: 44,
   },
   imageContainer: {
     flex: 1,

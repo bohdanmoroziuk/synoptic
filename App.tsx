@@ -7,6 +7,7 @@ import getImageForWeather from 'src/utils/getImageForWeather';
 import fetchLocationId from 'src/api/fetchLocationId';
 import fetchWeather from 'src/api/fetchWeather';
 
+import commonStyles from './styles';
 import styles from './App.styles';
 
 export default function App() {
@@ -56,18 +57,18 @@ export default function App() {
           {!loading && (
             <View>
               {error ? (
-                <Text style={[styles.text, styles.textSmall]}>
+                <Text style={[commonStyles.text, commonStyles.textSmall]}>
                   Could not load weather, please try a different city.
                 </Text>
               ) : (
                 <View>
-                  <Text style={[styles.text, styles.textLarge]}>
+                  <Text style={[commonStyles.text, commonStyles.textLarge]}>
                     {location}
                   </Text>
-                  <Text style={[styles.text, styles.textSmall]}>
+                  <Text style={[commonStyles.text, commonStyles.textSmall]}>
                     {weather}
                   </Text>
-                  <Text style={[styles.text, styles.textLarge]}>
+                  <Text style={[commonStyles.text, commonStyles.textLarge]}>
                     {Math.round(temperature)}°C
                   </Text>
                 </View>
