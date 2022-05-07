@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View, Platform, ImageBackground } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
 
 import SearchInput from 'src/components/SearchInput';
 import getImageForWeather from 'src/utils/getImageForWeather';
+
+import styles from './App.styles';
 
 export default function App() {
   return (
@@ -27,44 +29,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#34495E',
-  },
-  text: {
-    color: 'white',
-    textAlign: 'center',
-    ...Platform.select({
-      ios: {
-        fontFamily: 'AvenirNext-Regular',
-      },
-      android: {
-        fontFamily: 'Roboto',
-      },
-    }),
-  },
-  textSmall: {
-    fontSize: 18,
-  },
-  textLarge: {
-    fontSize: 44,
-  },
-  imageContainer: {
-    flex: 1,
-  },
-  image: {
-    flex: 1,
-    width: undefined,
-    height: undefined,
-    resizeMode: 'cover',
-  },
-  detailsContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-  },
-});
