@@ -1,12 +1,18 @@
-import { render } from '@testing-library/react-native';
+import { render, fireEvent, waitFor } from '@testing-library/react-native';
 
 import SearchInput from './SearchInput';
 
 describe('SearchInput', () => {
-  it('renders successfully', () => {
-    const mockPlaceholder = 'Type here';
+  const mockPlaceholder = 'Type here';
+  const mockOnSubmit = jest.fn();
 
-    const { toJSON } = render(<SearchInput placeholder={mockPlaceholder} />);
+  it('renders successfully', () => {
+    const { toJSON } = render(
+      <SearchInput
+        placeholder={mockPlaceholder}
+        onSubmit={() => {}}
+      />
+    );
 
     expect(toJSON()).toMatchSnapshot();
   });

@@ -12,13 +12,15 @@ exports[`SearchInput renders successfully 1`] = `
       "marginHorizontal": 40,
       "marginTop": 20,
       "paddingHorizontal": 10,
-      "width": 300,
+      "width": "100%",
     }
   }
 >
   <TextInput
     autoCorrect={false}
     clearButtonMode="always"
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
     placeholder="Type here"
     placeholderTextColor="white"
     style={
@@ -28,6 +30,7 @@ exports[`SearchInput renders successfully 1`] = `
       }
     }
     underlineColorAndroid="transparent"
+    value=""
   />
 </View>
 `;

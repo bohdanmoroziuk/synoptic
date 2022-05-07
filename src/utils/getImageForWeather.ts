@@ -2,7 +2,7 @@
 
 import { ImageSourcePropType } from 'react-native';
 
-const images = {
+const images: Record<string, ImageSourcePropType> = {
   Clear: require('../assets/images/clear.png'),
   Hail: require('../assets/images/hail.png'),
   'Heavy Cloud': require('../assets/images/heavy-cloud.png'),
@@ -15,4 +15,4 @@ const images = {
   Thunder: require('../assets/images/thunder.png'),
 };
 
-export default (weather: keyof typeof images) => images[weather] as ImageSourcePropType;
+export default (weather: string) => images[weather];
