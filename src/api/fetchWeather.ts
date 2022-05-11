@@ -1,4 +1,6 @@
-export default async function fetchWeather(woeid: string) {
+import { Weather } from 'src/types';
+
+export default async function fetchWeather(woeid: string): Promise<Weather> {
   const response = await fetch(`https://www.metaweather.com/api/location/${woeid}/`);
   const { title, consolidated_weather } = await response.json();
   const { weather_state_name, the_temp } = consolidated_weather[0];

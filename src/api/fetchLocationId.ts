@@ -1,4 +1,4 @@
-export default async function fetchLocationId(query: string) {
+export default async function fetchLocationId(query: string): Promise<string> {
   const response = await fetch(`https://www.metaweather.com/api/location/search/?query=${query}`);
   const locations = await response.json();
 

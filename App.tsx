@@ -2,18 +2,26 @@ import { useState } from 'react';
 import { Text, View, ImageBackground, StatusBar, ActivityIndicator } from 'react-native';
 
 import SearchInput from 'src/components/SearchInput';
+import WeatherDisplay from 'src/components/WeatherDisplay';
+
 import getImageForWeather from 'src/utils/getImageForWeather';
 
 import fetchLocationId from 'src/api/fetchLocationId';
 import fetchWeather from 'src/api/fetchWeather';
 
+import { Weather } from 'src/types';
+
 import commonStyles from './styles';
 import styles from './App.styles';
 
+const initialWeather: Weather = {
+  location: '',
+  weather: '',
+  temperature: 0,
+}
+
 export default function App() {
-  const [location, setLocation] = useState('');
-  const [weather, setWeather] = useState('');
-  const [temperature, setTemperature] = useState(0);
+  const [weather, setWeather] = useState<Weather>(initialWeather);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -24,17 +32,13 @@ export default function App() {
 
     try {
       const locationId = await fetchLocationId(city);
-      const { location, weather, temperature } = await fetchWeather(locationId);
+      const weather = await fetchWeather(locationId);
 
-      setError(false);
-      setLocation(location);
       setWeather(weather);
-      setTemperature(temperature);
+      setError(false);
     } catch (error) {
+      setWeather(initialWeather);
       setError(true);
-      setLocation('');
-      setWeather('');
-      setTemperature(0);
     } finally {
       setLoading(false);
     }
@@ -44,7 +48,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <ImageBackground
-        source={getImageForWeather(weather)}
+        source={getImageForWeather(weather.weather)}
         style={styles.imageContainer}
         imageStyle={styles.image}
       >
@@ -61,17 +65,7 @@ export default function App() {
                   Could not load weather, please try a different city.
                 </Text>
               ) : (
-                <View>
-                  <Text style={[commonStyles.text, commonStyles.textLarge]}>
-                    {location}
-                  </Text>
-                  <Text style={[commonStyles.text, commonStyles.textSmall]}>
-                    {weather}
-                  </Text>
-                  <Text style={[commonStyles.text, commonStyles.textLarge]}>
-                    {Math.round(temperature)}°C
-                  </Text>
-                </View>
+                <WeatherDisplay weather={weather} />
               )}
             </View>
           )}
