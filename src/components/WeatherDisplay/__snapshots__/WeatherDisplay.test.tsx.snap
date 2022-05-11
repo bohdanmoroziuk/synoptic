@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherDisplay renders correctly 1`] = `
+<View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNext-Regular",
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 44,
+        },
+      ]
+    }
+  >
+    Kyiv
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNext-Regular",
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 18,
+        },
+      ]
+    }
+  >
+    Light Cloud
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNext-Regular",
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 44,
+        },
+      ]
+    }
+  >
+    18°C
+  </Text>
+</View>
+`;
