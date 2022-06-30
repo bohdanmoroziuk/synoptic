@@ -1,5 +1,7 @@
 # Synoptic
 
+> Mobile application for viewing weather in cities.
+
 ## Preview
 
 <img src="./synoptic.jpg" alt="Synoptic" />
